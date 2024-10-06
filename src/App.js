@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import logo2 from './logo2.png';
 import './App.css';
+import SearchBar from './SearchBar.js'
+import {useState} from 'react';
+
+// import { RouterProvider, createBrowserRouter }from 'react-router-dom';
 
 function App() {
+  const [search, setSearch] = useState('');
+  const [keyword, setKeyword] = useState('');
+
   return (
     <div className="App">
+      <div className="App-logo">
+        <img src={logo2}  />
+      </div>
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>jammming</h1>
+        <p>spotify playlist app</p>
+        <form>
+          <SearchBar />
+          <button id="submit">Search</button>
+        </form>
       </header>
     </div>
   );
 }
 
 export default App;
+
+// <RouterProvider router={router} /> 
